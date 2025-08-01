@@ -1,0 +1,31 @@
+CREATE TABLE book1 (
+   S_NAME VARCHAR(50),
+  
+S_address varchar(50),
+rollno integer,
+Course varchar(50),
+DOB  
+date ,
+Gender  varchar(50)
+ );
+
+
+SELECT * FROM BOOK1 WHERE S_ADDRESS='BHUBANESWAR';
+
+SELECT S_NAME , DOB FROM BOOK1;
+
+select S_NAME , S_ADDRESS FROM BOOK1 WHERE DOB < 2001-1-1;
+
+ALTER TABLE BOOK1 ADD column AGE INTEGER;
+
+SELECT S_NAME FROM BOOK1 WHERE COURSE = 'MSC';
+
+SELECT * FROM BOOK1;
+
+SELECT Course, COUNT(*) AS student_count
+FROM BOOK1
+GROUP BY Course;
+
+UPDATE BOOK1
+SET age = FLOOR(DATEDIFF(CURDATE(), DOB) / 365.25);
+
