@@ -35,8 +35,7 @@ Publisher_name ) values
  set book_title='CSA LAB' ,book_author='MUKESH SIR'  where publish_year=2010; 
  
  
-ALTER TABLE book
-DROP COLUMN Publisher_name;
+
 
 
  
