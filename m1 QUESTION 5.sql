@@ -39,25 +39,31 @@ UPDATE student3
 SET Name = 'jack', address = 'hostel', dob = '1989-06-13' 
 WHERE rollno = 15; 
 
-use university;
+
 
 SELECT s.Name, s.dob, m.p1_mark, m.p2_mark 
 FROM student3 s
 JOIN mark3 m ON s.rollno = m.rollno; 
 
-USE UNIVERSITY;
+
 
 SELECT * FROM mark3 
 WHERE p1_mark >= 9; 
+
 SELECT * FROM mark3 
 WHERE p1_mark = 9 AND p2_mark = 9.95; 
+
 SELECT * FROM student3 
 WHERE dob <> '1990-03-10' AND rollno <> 5; 
+
 SELECT * FROM student3 
 WHERE dob NOT BETWEEN '1980-03-10' AND '1990-03-10'; 
+
 SELECT * FROM student3 
 WHERE Name LIKE 'S%' OR Name LIKE 'A%'; 
+
 ALTER TABLE mark3 
 ADD tot_mark numeric(4,2); 
+
 UPDATE mark3 
 SET tot_mark = p1_mark + p2_mark;
