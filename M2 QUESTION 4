@@ -1,0 +1,44 @@
+CREATE TABLE Department (
+    Dept_code INT PRIMARY KEY,
+    Dept_name VARCHAR(50)
+);
+
+CREATE TABLE Employee (
+    emp_code INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    desg VARCHAR(50),
+    Head INT,
+    DOJ DATE,
+    Basic FLOAT,
+    Dept_code INT,
+    FOREIGN KEY (Dept_code) REFERENCES Department(Dept_code)
+);
+
+
+INSERT INTO Department VALUES 
+(10, 'HR'),
+(20, 'Finance'),
+(30, 'IT'),
+(40, 'Sales'),
+(50, 'Marketing');
+
+INSERT INTO Employee VALUES
+(1, 'Ramesh', 'Manager', 0, '2020-01-15', 50000, 10),
+(2, 'Suresh', 'Clerk', 1, '2021-03-10', 20000, 20),
+(3, 'Mahesh', 'Analyst', 1, '2019-07-20', 30000, 30),
+(4, 'Rohit', 'Assistant', 3, '2022-02-05', 25000, 40),
+(5, 'Neha', 'HR Executive', 1, '2021-11-12', 22000, 10);
+
+SELECT emp_name 
+FROM Employee 
+WHERE desg LIKE '%Assistant%';
+
+SELECT emp_name 
+FROM Employee 
+WHERE Dept_code NOT IN (10, 40);
+
+
+SELECT DISTINCT desg 
+FROM Employee;
+
+
